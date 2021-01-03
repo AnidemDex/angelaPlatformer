@@ -49,5 +49,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionsAreas/HitBox"]
 shape = SubResource( 3 )
+[connection signal="health_changed" from="Stats" to="." method="_on_Stats_health_changed"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]
