@@ -1,16 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/levels/test_scene/test_tilemap/tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/test_scene/test_scene.gd" type="Script" id=3]
 [ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/player/angela.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/enemies/generic_enemy/generic_enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/test_scene/Angela.ogg" type="AudioStream" id=8]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
@@ -36,9 +38,6 @@ movement_speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Angela"]
 current = true
-
-[node name="GenericEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 646.792, 354.578 )
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
