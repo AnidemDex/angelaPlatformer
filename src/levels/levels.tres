@@ -7,4 +7,10 @@ script = ExtResource( 1 )
 levels = [ {
 "name": "test_level",
 "source": "res://src/levels/test_scene/test_scene.tscn"
+}, {
+"name": "house",
+"source": "res://src/house/house.tscn"
+}, {
+"name": "Main Menu",
+"source": "res://src/UI/main_menu/main_menu.tscn"
 } ]

@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "PlayableBody2D",
 "language": "GDScript",
 "path": "res://src/classes/playablecharacter2d.gd"
-}, {
-"base": "Resource",
-"class": "ResourceLevelData",
-"language": "GDScript",
-"path": "res://addons/LevelManager/interface/generics/generic_level_data_resource.gd"
 } ]
 _global_script_class_icons={
-"PlayableBody2D": "",
-"ResourceLevelData": ""
+"PlayableBody2D": ""
 }
 
 [application]
@@ -29,10 +23,6 @@ _global_script_class_icons={
 config/name="angelaPlatformer"
 run/main_scene="res://src/main/main.tscn"
 config/icon="res://icon.png"
-
-[editor_plugins]
-
-enabled=PoolStringArray( "LevelManager" )
 
 [input]
 
@@ -49,6 +39,13 @@ talk={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="world"
+2d_physics/layer_3="collectables"
+2d_physics/layer_4="enemies"
 
 [rendering]
 

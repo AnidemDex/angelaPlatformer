@@ -1,15 +1,17 @@
 extends Node2D
 
-var level_resource : ResourceLevelData
-
-func _ready() -> void:
-	level_resource = ResourceLoader.load("res://src/levels/levels.tres")
-	go_to_test_scene()
+func _ready():
+	go_to_main_menu()
+	pass
 
 
-func go_to_test_scene() -> void:
-	var test_scene = ResourceLoader.load(level_resource.levels[0].source)
-	change_scene(test_scene)
+func go_to_main_menu():
+	var menu = load("res://src/UI/main_menu/main_menu.tscn")
+	change_scene(menu)
+
+
+func replace_main_scene(resource):
+	call_deferred("change_scene", resource)
 
 
 func change_scene(resource : Resource):
@@ -19,3 +21,6 @@ func change_scene(resource : Resource):
 		remove_child(child)
 		child.queue_free()
 	add_child(node)
+
+	node.connect("quit", self, "go_to_main_menu")
+	node.connect("replace_main_scene", self, "replace_main_scene")

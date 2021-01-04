@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/main_menu/main_menu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="HBoxContainer"]
+margin_left = 186.0
+margin_top = 293.0
+margin_right = 323.0
+margin_bottom = 307.0
+size_flags_horizontal = 6
+text = "Awesome Game Title"
+
+[node name="Menu" type="Control" parent="HBoxContainer"]
+margin_left = 769.0
+margin_top = 300.0
+margin_right = 769.0
+margin_bottom = 300.0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="PlayButton" type="Button" parent="HBoxContainer/Menu"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HBoxContainer/Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
