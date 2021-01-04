@@ -1,0 +1,58 @@
+[gd_scene format=2]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 24
+custom_constants/margin_top = 24
+custom_constants/margin_left = 24
+custom_constants/margin_bottom = 24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="VBoxContainer" parent="."]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 1000.0
+margin_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullScreenOptions" type="HBoxContainer" parent="Settings"]
+margin_right = 976.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="Settings/FullScreenOptions"]
+margin_top = 5.0
+margin_right = 66.0
+margin_bottom = 19.0
+text = "FullScreen"
+
+[node name="CheckBox" type="CheckBox" parent="Settings/FullScreenOptions"]
+margin_left = 70.0
+margin_right = 94.0
+margin_bottom = 24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings"]
+margin_left = 435.0
+margin_top = 28.0
+margin_right = 541.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+
+[node name="ApplyButton" type="Button" parent="Settings/HBoxContainer"]
+margin_right = 48.0
+margin_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Apply"
+
+[node name="CancelButton" type="Button" parent="Settings/HBoxContainer"]
+margin_left = 52.0
+margin_right = 106.0
+margin_bottom = 20.0
+text = "Cancel"
