@@ -6,6 +6,9 @@ signal request_text(text)
 onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
 onready var stats:Node = $Stats
 
+func _ready():
+	self.PAUSE_MODE_STOP
+
 func die() -> void:
 	# Replace with the real death
 	print("Angela probably died, but i'm not going to remove it from scene")
@@ -24,6 +27,7 @@ func _on_HurtBox_body_entered(body:Node)->void:
 
 func _on_Stats_health_changed(value):
 	# FIXME: Another implementation pls
+	# RE; line 26- what do you need exactly? this normally shouldnt be called here. should be handled in the stats scene.
 	
 	var msg = ""
 	if stats:

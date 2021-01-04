@@ -14,17 +14,18 @@ var default_jump_force:float
 var _velocity:Vector2 = Vector2.ZERO
 var _speed:Vector2
 
-export(float) var gravity
-export(float) var movement_speed
+export(float) var gravity = 500
+export(float) var movement_speed = 100
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
-export(float) var jump_force
+export(float) var jump_force = 200
 
-export(String) var left_action = "left_button"
-export(String) var right_action = "right_button"
-export(String) var jump_action = "jump_button"
+export(String) var left_action = "ui_left"
+export(String) var right_action = "ui_right"
+export(String) var jump_action = "ui_up"
 
 func _ready():
+	
 	gravity = abs(gravity)
 	_assign_default_values()
 
