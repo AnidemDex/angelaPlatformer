@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/player/sprites/GameJamIdleAngela.png" type="Texture" id=1]
 [ext_resource path="res://src/player/angela.gd" type="Script" id=2]
@@ -9,6 +9,8 @@ radius = 7.34064
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 16 )
+
+[sub_resource type="CapsuleShape2D" id=3]
 
 [node name="Angela" type="KinematicBody2D"]
 collision_mask = 2147483662
@@ -36,6 +38,15 @@ __meta__ = {
 modulate = Color( 0.807843, 0, 0, 1 )
 position = Vector2( 0, 2 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="teleporter" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleporter"]
+shape = SubResource( 3 )
 [connection signal="health_changed" from="Stats" to="." method="_on_Stats_health_changed"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]

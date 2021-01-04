@@ -33,10 +33,6 @@ position = Vector2( 560.665, 519.087 )
 position = Vector2( 540.918, 293.768 )
 gravity = 600.0
 movement_speed = 200.0
-jump_force = 200.0
-left_action = "ui_left"
-right_action = "ui_right"
-jump_action = "ui_up"
 
 [node name="Camera2D" type="Camera2D" parent="Angela"]
 current = true
@@ -46,6 +42,7 @@ position = Vector2( 646.792, 354.578 )
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -20.0
 autoplay = true
 bus = "BG_Music"
 __meta__ = {
