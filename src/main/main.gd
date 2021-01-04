@@ -1,12 +1,14 @@
 extends Node2D
 
+export(String, FILE) var main_menu
+
 func _ready():
 	go_to_main_menu()
 	pass
 
 
 func go_to_main_menu():
-	var menu = load("res://src/UI/main_menu/main_menu.tscn")
+	var menu = load(main_menu)
 	change_scene(menu)
 
 
