@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/levels/test_scene/test_tilemap/tilemap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/test_scene/test_scene.gd" type="Script" id=3]
+[ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/player/angela.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/enemies/generic_enemy/generic_enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=7]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
+collision_layer = 2
+collision_mask = 3
 
-[node name="YSort" type="YSort" parent="."]
-
-[node name="Angela" parent="YSort" instance=ExtResource( 5 )]
+[node name="Angela" parent="." instance=ExtResource( 5 )]
 position = Vector2( 540.918, 293.768 )
 gravity = 600.0
 movement_speed = 200.0
@@ -22,7 +24,7 @@ left_action = "ui_left"
 right_action = "ui_right"
 jump_action = "ui_up"
 
-[node name="Camera2D" type="Camera2D" parent="YSort/Angela"]
+[node name="Camera2D" type="Camera2D" parent="Angela"]
 current = true
 
 [node name="GenericEnemy" parent="." instance=ExtResource( 6 )]
@@ -31,4 +33,10 @@ position = Vector2( 646.792, 354.578 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Narrator" parent="CanvasLayer" instance=ExtResource( 2 )]
-[connection signal="request_text" from="YSort/Angela" to="." method="_on_Angela_request_text"]
+
+[node name="MoneyBag" parent="." instance=ExtResource( 7 )]
+position = Vector2( 652.639, 503.969 )
+
+[node name="Pill_RedBlue" parent="." instance=ExtResource( 4 )]
+position = Vector2( 560.665, 519.087 )
+[connection signal="request_text" from="Angela" to="." method="_on_Angela_request_text"]

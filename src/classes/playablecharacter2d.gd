@@ -4,6 +4,13 @@ class_name PlayableBody2D
 const FLOOR_NORMAL: = Vector2.UP
 
 var direction:Vector2
+
+var default_gravity:float
+var default_movement_speed:float
+var default_friction:float
+var default_acceleration:float
+var default_jump_force:float
+
 var _velocity:Vector2 = Vector2.ZERO
 var _speed:Vector2
 
@@ -19,10 +26,27 @@ export(String) var jump_action = "jump_button"
 
 func _ready():
 	gravity = abs(gravity)
+	_assign_default_values()
 
 
 func _process(_delta):
 	_speed = Vector2(movement_speed, -jump_force)
+
+
+func restore_default_values() -> void:
+	gravity = default_gravity
+	movement_speed = default_movement_speed
+	friction = default_friction
+	acceleration = default_acceleration
+	jump_force = default_jump_force
+
+
+func _assign_default_values() -> void:
+	default_gravity = gravity
+	default_movement_speed = movement_speed
+	default_friction = friction
+	default_acceleration = acceleration
+	default_jump_force = jump_force
 
 
 func _physics_process(_delta):

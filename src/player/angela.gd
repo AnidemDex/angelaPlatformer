@@ -19,7 +19,8 @@ func _on_Stats_no_health() -> void:
 
 func _on_HurtBox_body_entered(body:Node)->void:
 	# This can be a group or a generic class (Enemy)
-	stats.health -= body.damage
+	if body.is_in_group("enemies"):
+		stats.health -= body.damage
 
 
 func _on_Stats_health_changed(value):

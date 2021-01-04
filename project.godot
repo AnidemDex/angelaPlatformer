@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "PlayableBody2D",
 "language": "GDScript",
 "path": "res://src/classes/playablecharacter2d.gd"
-}, {
-"base": "Resource",
-"class": "ResourceLevelData",
-"language": "GDScript",
-"path": "res://addons/LevelManager/interface/generics/generic_level_data_resource.gd"
 } ]
 _global_script_class_icons={
-"PlayableBody2D": "",
-"ResourceLevelData": ""
+"PlayableBody2D": ""
 }
 
 [application]
@@ -30,9 +24,28 @@ config/name="angelaPlatformer"
 run/main_scene="res://src/main/main.tscn"
 config/icon="res://icon.png"
 
-[editor_plugins]
+[importer_defaults]
 
-enabled=PoolStringArray( "LevelManager" )
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -50,7 +63,15 @@ talk={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="world"
+2d_physics/layer_3="collectables"
+2d_physics/layer_4="enemies"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 environment/default_environment="res://default_env.tres"
