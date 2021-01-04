@@ -39,14 +39,17 @@ modulate = Color( 0.807843, 0, 0, 1 )
 position = Vector2( 0, 2 )
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="teleporter" type="Area2D" parent="."]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teleporter"]
 shape = SubResource( 3 )
-[connection signal="health_changed" from="Stats" to="." method="_on_Stats_health_changed"]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="no_sanity" from="Stats" to="." method="_on_Stats_no_sanity"]
+[connection signal="sanity_changed" from="Stats" to="Stats" method="_on_Stats_sanity_changed"]
 [connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

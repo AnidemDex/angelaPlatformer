@@ -1,6 +1,7 @@
 extends Area2D
 
-var damage = 1
+
 
 func _on_MoneyBag_body_entered(body):
+	body.stats.sanity -= 1
 	queue_free()

@@ -5,25 +5,34 @@ signal request_text(text)
 
 onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
 onready var stats:Node = $Stats
+onready var timer:Timer = $Timer
 
-func die() -> void:
+func _ready():
+	print(stats.health)
+
+func hpDie() -> void:
+	# Replace with the real death
+	print("Angela probably died, but i'm not going to remove it from scene")
+	emit_signal("died")
+	emit_signal("request_text", "Now Angela is dead")
+
+func sntyDie() -> void:
 	# Replace with the real death
 	print("Angela probably died, but i'm not going to remove it from scene")
 	emit_signal("died")
 	emit_signal("request_text", "Now Angela is dead")
 
 func _on_Stats_no_health() -> void:
-	die()
+	hpDie()
 
+func _on_Stats_no_sanity():
+	sntyDie()
 
 func _on_HurtBox_body_entered(body:Node)->void:
 	# This can be a group or a generic class (Enemy)
 	if body.is_in_group("enemies"):
 		stats.sanity -= body.damage
-
-
-func _on_Stats_health_changed(value):
-
+		
 	
 	var msg = ""
 	if stats:
@@ -42,3 +51,8 @@ func _on_Stats_health_changed(value):
 				pass
 		if msg:
 			emit_signal("request_text", msg)
+
+
+func _on_Timer_timeout():
+	stats.health -= 1
+	print(stats.health)
