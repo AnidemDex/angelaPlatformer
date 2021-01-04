@@ -3,6 +3,7 @@ extends Node2D
 export(String, FILE) var main_menu
 
 func _ready():
+	OS.window_fullscreen = Settings.fullscreen
 	go_to_main_menu()
 	pass
 

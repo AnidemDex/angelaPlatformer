@@ -24,6 +24,16 @@ config/name="angelaPlatformer"
 run/main_scene="res://src/main/main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://src/interface/settings.gd"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="2d"
+window/stretch/aspect="keep_height"
+
 [importer_defaults]
 
 texture={
