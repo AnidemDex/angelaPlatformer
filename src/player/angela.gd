@@ -4,7 +4,6 @@ signal died
 signal request_text(text)
 
 onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
-onready var hitbox:Area2D = $CollisionsAreas/HitBox
 onready var stats:Node = $Stats
 
 func die() -> void:
