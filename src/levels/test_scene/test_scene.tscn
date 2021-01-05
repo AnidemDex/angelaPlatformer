@@ -30,7 +30,7 @@ tile_data = PoolIntArray( -15, 3, 0, -14, 3, 1, -13, 3, 1, -12, 3, 1, -11, 3, 1,
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="MoneyBag" parent="Collectables" instance=ExtResource( 7 )]
-position = Vector2( 102.421, 292.187 )
+position = Vector2( 108.972, 305.401 )
 
 [node name="Pill_RedBlue" parent="Collectables" instance=ExtResource( 4 )]
 position = Vector2( 1004.11, 622.636 )
@@ -65,5 +65,5 @@ position = Vector2( 592.087, 512.628 )
 
 [node name="TileMapGenerator" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 2097130, 0, 0, 2097131, 0, 0, 2097132, 0, 0, 2097133, 0, 0, 2097134, 0, 0, 2097135, 0, 0, 2097136, 0, 0, 2097137, 0, 0, 2097138, 0, 0, 2097139, 0, 0, 2097140, 0, 0 )
-source = "res://src/environment/falling_ground/FallingGround.tscn"
+source = "res://src/environment/falling_ground/falling_ground.tscn"
 [connection signal="request_text" from="Angela" to="." method="_on_Angela_request_text"]
