@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/interface/main_menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://src/interface/settings/settings.tscn" type="PackedScene" id=2]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -35,36 +36,53 @@ margin_bottom = 307.0
 size_flags_horizontal = 6
 text = "Awesome Game Title"
 
-[node name="Menu" type="Control" parent="CanvasLayer/HBoxContainer"]
-margin_left = 769.0
-margin_top = 300.0
-margin_right = 769.0
-margin_bottom = 300.0
+[node name="Center" type="CenterContainer" parent="CanvasLayer/HBoxContainer"]
+margin_left = 737.0
+margin_top = 266.0
+margin_right = 800.0
+margin_bottom = 334.0
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Menu"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Menu" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Center"]
+margin_right = 63.0
+margin_bottom = 68.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/HBoxContainer/Menu/VBoxContainer"]
-margin_right = 40.0
+[node name="PlayButton" type="Button" parent="CanvasLayer/HBoxContainer/Center/Menu"]
+margin_right = 63.0
 margin_bottom = 20.0
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/HBoxContainer/Menu/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="CanvasLayer/HBoxContainer/Center/Menu"]
 margin_top = 24.0
-margin_right = 40.0
+margin_right = 63.0
 margin_bottom = 44.0
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/HBoxContainer/Center/Menu"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Menu/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/HBoxContainer/Menu/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+
+[node name="SettingsNode" parent="CanvasLayer/HBoxContainer/Center" instance=ExtResource( 2 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -101.0
+margin_top = -38.0
+margin_right = 163.0
+margin_bottom = 106.0
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="ConfirmSection_pressed" from="CanvasLayer/HBoxContainer/Center/SettingsNode" to="." method="_on_SettingsNode_ConfirmSection_pressed"]
