@@ -42,7 +42,7 @@ collision_layer = 4
 temp_movement_speed = 300
 
 [node name="Angela" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1048, 192 )
+position = Vector2( 800, 632 )
 gravity = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="Angela"]
