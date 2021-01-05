@@ -11,8 +11,16 @@ func _ready():
 	
 
 func _generate():
+	visible = true
+	
 	for cell_position in get_used_cells():
 		var generated_node = _node.instance()
-		add_child(generated_node)
+		if owner:
+			owner.add_child(generated_node)
+		else:
+			add_child(generated_node)
 		generated_node.position = map_to_world(cell_position)+Vector2(16,16)
-		set_cellv(cell_position, -1)
+		if not owner:
+			set_cellv(cell_position, -1)
+	
+	visible = false
