@@ -10,9 +10,6 @@
 [ext_resource path="res://src/levels/Angela.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/levels/level1/test_scene.gd" type="Script" id=9]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 10 )
 
