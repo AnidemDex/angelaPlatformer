@@ -45,7 +45,6 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=8]
 radius = 10.884
-height = 18.9535
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 11.5514, 20.1591 )
@@ -62,7 +61,10 @@ animation = "idle"
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< HEAD
 position = Vector2( -0.33371, -0.667418 )
+=======
+>>>>>>> 07ca6d929777d7d905345049877c0f094cc292d6
 shape = SubResource( 8 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
@@ -70,7 +72,7 @@ shape = SubResource( 8 )
 [node name="CollisionsAreas" type="Node2D" parent="."]
 
 [node name="HurtBox" type="Area2D" parent="CollisionsAreas"]
-position = Vector2( -0.333711, -1.33258 )
+position = Vector2( 0, -2 )
 collision_mask = 8
 __meta__ = {
 "_edit_group_": true
@@ -84,6 +86,10 @@ shape = SubResource( 9 )
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 30.0
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="no_sanity" from="Stats" to="." method="_on_Stats_no_sanity"]
 [connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]
