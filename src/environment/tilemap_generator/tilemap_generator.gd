@@ -16,7 +16,7 @@ func _generate():
 	for cell_position in get_used_cells():
 		var generated_node = _node.instance()
 		if owner:
-			owner.add_child(generated_node)
+			owner.call_deferred("add_child",generated_node)
 		else:
 			add_child(generated_node)
 		generated_node.position = map_to_world(cell_position)+Vector2(16,16)
