@@ -15,7 +15,7 @@ var _velocity:Vector2 = Vector2.ZERO
 var _speed:Vector2
 
 export(float) var gravity = 500
-export(float) var movement_speed = 100
+export(float) var movement_speed = 150
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
 export(float) var jump_force = 200

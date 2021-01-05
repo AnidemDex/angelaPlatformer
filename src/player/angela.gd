@@ -5,7 +5,7 @@ signal request_text(text)
 
 onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
 onready var stats:Node = $Stats
-onready var timer:Timer = $Timer
+onready var timer:Timer = $DeathTimer
 
 func hpDie() -> void:
 	# Replace with the real death
@@ -33,19 +33,21 @@ func _on_HurtBox_body_entered(body:Node)->void:
 	
 	var msg = ""
 	if stats:
-		match stats.health:
-			stats.max_health:
-				msg = "Angela needs money"
+		match stats.sanity:
+			stats.max_sanity:
+				msg = "Angela needs to find money, but there isnt any"
 			5:
-				msg = "Still no money, Angela starts struggling to think straight"
+				msg = "the bag was empty"
+			4:
+				msg = "Empty again, Angela starts struggling to think straight"
 			3:
-				msg = "Angela is really struggling to think straight"
+				msg = "...Empty. Angela is really struggling to think straight"
 			2:
-				msg = "The harshness of reality is starting to set in, angela is horrified that her mom may pass. "
+				msg = "ofcourse its empty"
 			1:
-				msg = "Angela has a mental breakdown. she was so close, she failed. her mom never recovered"
+				msg = "nothing, at all. The harshness of reality is starting to set in, angela is horrified that her mom may pass. "
 			_:
-				pass
+				msg = "Angela has a mental breakdown. she was so close, she failed. her mom never recovered"
 		if msg:
 			emit_signal("request_text", msg)
 

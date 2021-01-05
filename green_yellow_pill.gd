@@ -3,11 +3,11 @@ extends Area2D
 onready var hurtbox:CollisionShape2D = $CollisionShape2D
 export(int) var temp_jump_force = 0
 
-func _on_Pill_RedBlue_body_entered(body):
-	body.jump_force = temp_jump_force
+func _on_green_yellow_pill_body_entered(body):
+	body.movement_speed = temp_jump_force
 	visible = false
 	hurtbox.set_deferred("disabled", true)
 	yield(get_tree().create_timer(10), "timeout")
-	body.jump_force = 200
+	body.movement_speed = 150
 	visible = true
 	hurtbox.set_deferred("disabled", false)
