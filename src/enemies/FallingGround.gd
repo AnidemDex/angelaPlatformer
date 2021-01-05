@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 onready var PlayerDetector:CollisionShape2D = $playerDetector
-onready var FallDetector:CollisionShape2D = $FallDetector
 
 func _ready():
 	set_mode(1)
