@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sanity_hit.wav-9b8b0eab51e395e36f53f02ed481af42.sample"
+
+[deps]
+
+source_file="res://src/collectables/money_bag/Sanity_hit.wav"
+dest_files=[ "res://.import/Sanity_hit.wav-9b8b0eab51e395e36f53f02ed481af42.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
