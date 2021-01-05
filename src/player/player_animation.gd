@@ -10,8 +10,10 @@ func _process(_delta):
 	match dir:
 		-1:
 			flip_h = true
+			offset.x = 12
 		1:
 			flip_h = false
+			offset.x = 0
 	
 	if dir:
 		play("walking")

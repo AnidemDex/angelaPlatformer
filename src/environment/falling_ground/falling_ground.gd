@@ -4,7 +4,7 @@ export(float, 0.001, 1) var time_before_fall = 0.001
 
 onready var PlayerDetector:CollisionShape2D = $playerDetector
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if $RayCast2D.is_colliding():
 		$RayCast2D.enabled = false
 		_fall()
