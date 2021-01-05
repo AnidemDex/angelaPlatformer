@@ -6,10 +6,6 @@
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/house/house.gd" type="Script" id=5]
 
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 36.818 )
 
@@ -32,7 +28,7 @@ autoplay = true
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
-level_path = "res://src/levels/test_scene/Level 1.tscn"
+level_path = "res://src/levels/level1/Level 1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 shape = SubResource( 1 )
