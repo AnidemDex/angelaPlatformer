@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "PlayableBody2D",
 "language": "GDScript",
 "path": "res://src/classes/playablecharacter2d.gd"
+}, {
+"base": "Node",
+"class": "Transition",
+"language": "GDScript",
+"path": "res://src/interface/transitions/transitions.gd"
 } ]
 _global_script_class_icons={
-"PlayableBody2D": ""
+"PlayableBody2D": "",
+"Transition": ""
 }
 
 [application]
