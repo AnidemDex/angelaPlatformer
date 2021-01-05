@@ -61,10 +61,7 @@ animation = "idle"
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-<<<<<<< HEAD
 position = Vector2( -0.33371, -0.667418 )
-=======
->>>>>>> 07ca6d929777d7d905345049877c0f094cc292d6
 shape = SubResource( 8 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
