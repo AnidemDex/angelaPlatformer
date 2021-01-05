@@ -25,4 +25,4 @@ autoplay = true
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
-level_path = "res://src/levels/test_scene/test_scene.tscn"
+level_path = "res://src/levels/test_scene/Level 1.tscn"

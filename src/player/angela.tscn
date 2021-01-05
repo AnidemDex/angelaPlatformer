@@ -43,7 +43,7 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 10.884
 height = 18.9535
 
@@ -63,7 +63,7 @@ script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.33371, -0.667418 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 

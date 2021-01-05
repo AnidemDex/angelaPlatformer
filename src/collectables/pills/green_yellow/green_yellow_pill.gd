@@ -2,6 +2,7 @@ extends Area2D
 
 onready var hurtbox:CollisionShape2D = $CollisionShape2D
 export(int) var temp_movement_speed = 0
+export(int) var time = 5
 export(Color) var color = Color.green
 
 func _on_green_yellow_pill_body_entered(body):
@@ -18,7 +19,7 @@ func _on_green_yellow_pill_body_entered(body):
 	tween.start()
 	visible = false
 	hurtbox.set_deferred("disabled", true)
-	yield(get_tree().create_timer(5), "timeout")
+	yield(get_tree().create_timer(time), "timeout")
 	body.movement_speed = 150
 	visible = true
 	hurtbox.set_deferred("disabled", false)
