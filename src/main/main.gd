@@ -16,21 +16,18 @@ func go_to_main_menu():
 	var menu = load(main_menu)
 	replace_main_scene(menu)
 
+func go_to_level(level:String):
+	var scene = load(level)
+	replace_main_scene(scene)
 
 func replace_main_scene(resource:Resource):
+	print_debug("Changing main scene")
+	transition.fade_in()
+	yield(transition, "animation_finished")
 	if current_scene:
 		current_scene.visible = false
 
-	transition.fade_in()
-	yield(transition, "animation_finished")
-
 	call_deferred("change_scene", resource)
-	
-	transition.fade_out()
-	yield(transition, "animation_finished")
-	
-	current_scene.visible = true
-
 
 func change_scene(resource : Resource):
 
@@ -40,7 +37,12 @@ func change_scene(resource : Resource):
 
 	current_scene = resource.instance()
 	current_scene.visible = false
+	current_scene.connect("ready", self, "_on_scene_ready")
 	current_scene.connect("quit", self, "go_to_main_menu")
-	current_scene.connect("replace_main_scene", self, "replace_main_scene")
+	current_scene.connect("replace_main_scene", self, "go_to_level")
 
 	add_child(current_scene)
+
+func _on_scene_ready():
+	current_scene.visible = true
+	transition.fade_out()

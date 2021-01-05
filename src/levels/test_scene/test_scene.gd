@@ -1,5 +1,8 @@
 extends Node2D
 
+signal quit
+signal replace_main_scene(with)
+
 onready var narrator = $CanvasLayer/Narrator
 
 func _on_Angela2_died():

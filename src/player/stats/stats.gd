@@ -37,6 +37,3 @@ func set_sanity(value):
 func _ready():
 	self.health = max_health
 	self.sanity = max_sanity
-
-func _on_Stats_sanity_changed(value):
-	print(sanity)

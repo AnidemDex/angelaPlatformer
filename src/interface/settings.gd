@@ -1,6 +1,6 @@
 extends Node
 
-var fullscreen = true
+var fullscreen = false
 
 func _ready():
 	load_settings()

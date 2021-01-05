@@ -5,7 +5,7 @@ signal replace_main_scene(with)
 
 
 func _on_PlayButton_pressed():
-	get_tree().change_scene("res://src/house/house.tscn")
+	emit_signal("replace_main_scene","res://src/house/house.tscn")
 
 
 func _on_QuitButton_pressed():

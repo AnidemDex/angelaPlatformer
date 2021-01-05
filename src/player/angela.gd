@@ -7,9 +7,6 @@ onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
 onready var stats:Node = $Stats
 onready var timer:Timer = $Timer
 
-func _ready():
-	print(stats.health)
-
 func hpDie() -> void:
 	# Replace with the real death
 	print("Angela probably died, but i'm not going to remove it from scene")
@@ -55,4 +52,3 @@ func _on_HurtBox_body_entered(body:Node)->void:
 
 func _on_Timer_timeout():
 	stats.health -= 1
-	print(stats.health)
