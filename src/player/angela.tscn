@@ -4,56 +4,56 @@
 [ext_resource path="res://src/player/stats/stats.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/player/sprites/walking.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 38, 44 )
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 38, 44 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
-region = Rect2( 38, 0, 38, 44 )
+region = Rect2( 0, 0, 38, 44 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 4 )
-region = Rect2( 76, 0, 38, 44 )
+region = Rect2( 38, 0, 38, 44 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 4 )
+region = Rect2( 76, 0, 38, 44 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
 region = Rect2( 114, 0, 38, 44 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "walking",
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 10.884
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 11.5514, 20.1591 )
 
 [node name="Angela" type="KinematicBody2D"]
-collision_mask = 2147484702
+collision_mask = 2147483662
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -7, 0 )
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "walking"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 
@@ -69,7 +69,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionsAreas/HurtBox"]
 modulate = Color( 0.807843, 0, 0, 1 )
 position = Vector2( 0, 2 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 30.0

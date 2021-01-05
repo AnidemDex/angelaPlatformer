@@ -8,7 +8,7 @@
 [ext_resource path="res://src/collectables/hiddens/HiddenCollectible.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/test_scene/Angela.ogg" type="AudioStream" id=8]
-[ext_resource path="res://src/enemies/FallingGround.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/environment/tilemap_generator/tilemap_generator.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=10]
 
 [node name="TestScene" type="Node2D"]
@@ -42,7 +42,7 @@ collision_layer = 4
 temp_movement_speed = 300
 
 [node name="Angela" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1060.09, 203.22 )
+position = Vector2( -344, 928 )
 gravity = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="Angela"]
@@ -63,38 +63,7 @@ __meta__ = {
 [node name="HiddenCollectible" parent="." instance=ExtResource( 6 )]
 position = Vector2( 592.087, 512.628 )
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="FallingGround" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -366, 1008 )
-
-[node name="FallingGround2" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -398.4, 1008 )
-
-[node name="FallingGround3" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -430.8, 1008 )
-
-[node name="FallingGround4" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -463.2, 1008 )
-
-[node name="FallingGround5" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -495.6, 1008 )
-
-[node name="FallingGround6" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -528, 1008 )
-
-[node name="FallingGround7" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -560.4, 1008 )
-
-[node name="FallingGround8" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -592.8, 1008 )
-
-[node name="FallingGround9" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -625.2, 1008 )
-
-[node name="FallingGround10" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -657.6, 1008 )
-
-[node name="FallingGround11" parent="Node2D" instance=ExtResource( 9 )]
-position = Vector2( -690, 1008 )
+[node name="TileMapGenerator" parent="." instance=ExtResource( 9 )]
+tile_data = PoolIntArray( 2097130, 0, 0, 2097131, 0, 0, 2097132, 0, 0, 2097133, 0, 0, 2097134, 0, 0, 2097135, 0, 0, 2097136, 0, 0, 2097137, 0, 0, 2097138, 0, 0, 2097139, 0, 0, 2097140, 0, 0 )
+source = "res://src/environment/falling_ground/FallingGround.tscn"
 [connection signal="request_text" from="Angela" to="." method="_on_Angela_request_text"]
