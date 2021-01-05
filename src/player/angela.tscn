@@ -43,8 +43,9 @@ animations = [ {
 "speed": 8.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=8]
+[sub_resource type="CapsuleShape2D" id=10]
 radius = 10.884
+height = 18.9535
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 11.5514, 20.1591 )
@@ -61,14 +62,15 @@ animation = "idle"
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 8 )
+position = Vector2( -0.33371, -0.667418 )
+shape = SubResource( 10 )
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionsAreas" type="Node2D" parent="."]
 
 [node name="HurtBox" type="Area2D" parent="CollisionsAreas"]
-position = Vector2( 0, -2 )
+position = Vector2( -0.333711, -1.33258 )
 collision_mask = 8
 __meta__ = {
 "_edit_group_": true
