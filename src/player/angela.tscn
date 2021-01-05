@@ -44,7 +44,7 @@ radius = 10.884
 extents = Vector2( 11.5514, 20.1591 )
 
 [node name="Angela" type="KinematicBody2D"]
-collision_mask = 2147483662
+collision_mask = 2147484702
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
