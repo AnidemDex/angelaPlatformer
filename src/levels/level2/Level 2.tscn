@@ -34,7 +34,7 @@ temp_jump_force = 300
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 6 )]
 position = Vector2( -384, 512 )
-level_path = "res://src/levels/test_scene/Level 1.tscn"
+level_path = "res://src/levels/level3/Level 3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 shape = SubResource( 1 )

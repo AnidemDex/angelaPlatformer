@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TESTBEDNOSPACE1.png-800b070a5a7b951dc75ce84668f591d3.stex"
+path="res://.import/v2DannyGameJam.png-ce7445647abdf0af12ceba3415b2e9b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/house/TESTBEDNOSPACE1.png"
-dest_files=[ "res://.import/TESTBEDNOSPACE1.png-800b070a5a7b951dc75ce84668f591d3.stex" ]
+source_file="res://src/levels/level1/test_tilemap/sprites/v2DannyGameJam.png"
+dest_files=[ "res://.import/v2DannyGameJam.png-ce7445647abdf0af12ceba3415b2e9b9.stex" ]
 
 [params]
 

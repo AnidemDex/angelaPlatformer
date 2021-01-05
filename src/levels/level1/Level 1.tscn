@@ -1,20 +1,23 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/levels/test_scene/Angela.ogg" type="AudioStream" id=1]
-[ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/levels/test_scene/test_tilemap/tilemap.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/levels/test_scene/test_scene.gd" type="Script" id=11]
+[ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/level1/test_tilemap/tilemap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/levels/Angela.ogg" type="AudioStream" id=8]
+[ext_resource path="res://src/levels/level1/test_scene.gd" type="Script" id=9]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 10 )
 
 [node name="TestScene" type="Node2D"]
-script = ExtResource( 11 )
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -22,10 +25,10 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
 
-[node name="Narrator" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Narrator" parent="CanvasLayer" instance=ExtResource( 7 )]
 
 [node name="BG_Music" type="AudioStreamPlayer" parent="CanvasLayer"]
-stream = ExtResource( 1 )
+stream = ExtResource( 8 )
 volume_db = -20.0
 autoplay = true
 bus = "BG_Music"
@@ -40,24 +43,24 @@ tile_data = PoolIntArray( -15, 3, 0, -14, 3, 1, -13, 3, 1, -12, 3, 1, -11, 3, 1,
 
 [node name="Collectables" type="Node2D" parent="."]
 
-[node name="MoneyBag" parent="Collectables" instance=ExtResource( 5 )]
+[node name="MoneyBag" parent="Collectables" instance=ExtResource( 2 )]
 position = Vector2( 108.972, 305.401 )
 
-[node name="Pill_RedBlue" parent="Collectables" instance=ExtResource( 6 )]
+[node name="Pill_RedBlue" parent="Collectables" instance=ExtResource( 1 )]
 position = Vector2( 1004.11, 622.636 )
 temp_jump_force = 300
 
-[node name="green_yellow_pill" parent="Collectables" instance=ExtResource( 7 )]
+[node name="green_yellow_pill" parent="Collectables" instance=ExtResource( 3 )]
 position = Vector2( 116.9, 942.694 )
 collision_layer = 4
 temp_movement_speed = 300
 
-[node name="GoToAnotherScene" parent="." instance=ExtResource( 9 )]
+[node name="GoToAnotherScene" parent="." instance=ExtResource( 5 )]
 position = Vector2( -112, 544 )
 level_path = "res://src/levels/level2/Level 2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 shape = SubResource( 1 )
 
-[node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
+[node name="PlayerSpawner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1016, 192 )

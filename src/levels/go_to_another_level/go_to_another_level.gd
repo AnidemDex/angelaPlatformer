@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String, FILE) var level_path:String
+export(String, FILE, "*.tscn") var level_path:String
 
 func _ready():
 	if not level_path:

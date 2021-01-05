@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Angela.ogg-5ef0c7d21224b0201236a6857f19650f.oggstr"
+
+[deps]
+
+source_file="res://src/levels/Angela.ogg"
+dest_files=[ "res://.import/Angela.ogg-5ef0c7d21224b0201236a6857f19650f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

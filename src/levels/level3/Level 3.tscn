@@ -8,7 +8,7 @@
 [ext_resource path="res://src/levels/test_scene/test_tilemap/tilemap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/levels/Level 3.gd" type="Script" id=9]
+[ext_resource path="res://src/levels/level3/Level 3.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 40 )
