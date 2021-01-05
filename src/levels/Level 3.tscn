@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://src/player/angela.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/environment/tilemap_generator/tilemap_generator.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=4]
@@ -8,8 +8,13 @@
 [ext_resource path="res://src/levels/test_scene/test_tilemap/tilemap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/levels/Level 3.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 40 )
 
 [node name="Level 3" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -53,14 +58,11 @@ position = Vector2( 585.126, 54.0798 )
 temp_movement_speed = 300
 time = 7
 
-[node name="Angela" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1257.49, 420.447 )
-
-[node name="Camera2D" type="Camera2D" parent="Angela"]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-limit_right = 1525
-
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 8 )]
-position = Vector2( -363.515, 477.808 )
-level_path = "res://Level 2.tscn"
+position = Vector2( -360, 480 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
+shape = SubResource( 1 )
+
+[node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1256, 424 )

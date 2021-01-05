@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/environment/house_environment.tres" type="TileSet" id=1]
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/test_scene/Angela.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/house/house.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 36.818 )
 
 [node name="House" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -26,3 +29,6 @@ autoplay = true
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
 level_path = "res://src/levels/test_scene/Level 1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
+shape = SubResource( 1 )
