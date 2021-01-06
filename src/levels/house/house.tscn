@@ -49,7 +49,7 @@ position = Vector2( 749.917, 504.974 )
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
-level_path = "res://src/levels/ending_scene/ending_scene.tscn"
+level_path = "res://src/levels/level1/Level 1.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 shape = SubResource( 1 )
@@ -60,7 +60,6 @@ scale = Vector2( 2, 2 )
 z_index = -1
 frames = SubResource( 6 )
 animation = "dafault"
-frame = 4
 playing = true
 
 [node name="BG_Music" parent="." instance=ExtResource( 3 )]

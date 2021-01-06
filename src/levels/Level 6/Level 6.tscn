@@ -46,7 +46,7 @@ source = "res://src/environment/ladders.tscn"
 position = Vector2( 720, 120 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 72, 168 )
+position = Vector2( 120, 264 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 718.127, 283.88 )
@@ -130,6 +130,6 @@ shape = SubResource( 4 )
 [connection signal="body_entered" from="Area2D2" to="Area2D2/CollisionShape2D" method="_on_Area2D2_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2/RigidBody2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/CollisionShape2D" method="_on_Area2D3_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D4" method="_on_Area2D3_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D3" method="_on_Area2D3_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D2" method="_on_Area2D_body_entered"]
