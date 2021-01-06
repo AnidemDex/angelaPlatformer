@@ -101,7 +101,7 @@ position = Vector2( 321.28, 354.038 )
 emisor_node = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2( -1.27988, 29.9622 )
+position = Vector2( -1.28, 29.962 )
 shape = SubResource( 3 )
 
 [node name="MoneyBag" parent="." instance=ExtResource( 10 )]

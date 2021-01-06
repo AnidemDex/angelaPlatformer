@@ -55,4 +55,4 @@ func _on_HurtBox_body_entered(body:Node)->void:
 
 
 func _on_Timer_timeout():
-	stats.health -= 1
+	stats.health -= 0

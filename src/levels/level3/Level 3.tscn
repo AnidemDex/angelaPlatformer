@@ -42,6 +42,7 @@ tile_data = PoolIntArray( -458737, 3, 0, -458736, 3, 1, -458735, 3, 1, -458734, 
 
 [node name="MoneyBag" parent="Collectables" instance=ExtResource( 4 )]
 position = Vector2( 302.401, 465.233 )
+sanity_damage = 3
 
 [node name="Pill_RedBlue" parent="Collectables" instance=ExtResource( 5 )]
 position = Vector2( 1120.23, 527.864 )

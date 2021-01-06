@@ -78,6 +78,7 @@ temp_jump_force = 400
 
 [node name="MoneyBag" parent="." instance=ExtResource( 7 )]
 position = Vector2( 376, 16 )
+sanity_damage = 5
 
 [node name="DoubleJumpPill" parent="." instance=ExtResource( 8 )]
 position = Vector2( 88, 48 )
