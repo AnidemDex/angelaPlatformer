@@ -25,6 +25,14 @@ extents = Vector2( 16, 16 )
 [node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( -8, 160 )
 
+[node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
+position = Vector2( 8, -160 )
+limit_left = -85
+limit_top = -171
+limit_right = 994
+limit_bottom = 288
+editor_draw_limits = true
+
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 2 )]
 position = Vector2( 864, -64 )
 

@@ -6,6 +6,7 @@ signal request_text(text)
 onready var hurtbox:Area2D = $CollisionsAreas/HurtBox
 onready var stats:Node = $Stats
 onready var timer:Timer = $DeathTimer
+onready var camera:Camera2D = $Camera2D
 
 func hpDie() -> void:
 	# Replace with the real death

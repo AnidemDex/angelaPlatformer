@@ -87,6 +87,7 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.6, 0.6 )
+smoothing_enabled = true
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="no_sanity" from="Stats" to="." method="_on_Stats_no_sanity"]
 [connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]
