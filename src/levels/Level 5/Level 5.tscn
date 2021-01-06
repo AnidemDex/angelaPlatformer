@@ -7,8 +7,12 @@
 [ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/collectables/pills/green_yellow/green_yellow_pill.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=7]
-[ext_resource path="res://doubleJumpPill.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/collectables/pills/double_jump/double_jump_pill.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/environment/death_zone/death_zone.tscn" type="PackedScene" id=9]
+
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )

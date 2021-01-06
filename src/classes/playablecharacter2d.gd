@@ -11,7 +11,6 @@ var default_friction:float
 var default_acceleration:float
 var default_jump_force:float
 var jumps:int
-var can_jump:bool
 
 var _velocity:Vector2 = Vector2.ZERO
 var _speed:Vector2
@@ -21,7 +20,7 @@ export(float) var movement_speed = 150
 export (float, 0, 1.0) var friction = 0.1
 export (float, 0, 1.0) var acceleration = 0.25
 export(float) var jump_force = 200
-export(int)var max_jumps:int = 1
+export(int)var max_jumps:int = 0
 
 export(String) var left_action = "ui_left"
 export(String) var right_action = "ui_right"
