@@ -7,17 +7,20 @@
 [ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/levels/level2/Level 2.gd" type="Script" id=7]
-[ext_resource path="res://src/levels/level2/Angela.wav" type="AudioStream" id=8]
-[ext_resource path="res://src/levels/level2/AudioStreamPlayer.gd" type="Script" id=9]
+[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/levels/BG_Music.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 31.9999 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 200, 10 )
-
 [node name="Level2" type="Node2D"]
 script = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG_Music" parent="CanvasLayer" instance=ExtResource( 9 )]
+
+[node name="Narrator" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
 collision_layer = 2
@@ -46,8 +49,3 @@ shape = SubResource( 1 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 88 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = -15.0
-script = ExtResource( 9 )

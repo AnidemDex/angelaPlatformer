@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/levels/Angela.ogg" type="AudioStream" id=1]
+
+[node name="BG_Music" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -20.0
+autoplay = true
+bus = "BG_Music"
+__meta__ = {
+"_editor_description_": "Maybe we must put this in its own scene"
+}

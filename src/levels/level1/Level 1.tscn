@@ -7,7 +7,7 @@
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/levels/Angela.ogg" type="AudioStream" id=8]
+[ext_resource path="res://src/levels/BG_Music.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/levels/level1/test_scene.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -24,14 +24,7 @@ layer = 10
 
 [node name="Narrator" parent="CanvasLayer" instance=ExtResource( 7 )]
 
-[node name="BG_Music" type="AudioStreamPlayer" parent="CanvasLayer"]
-stream = ExtResource( 8 )
-volume_db = -20.0
-autoplay = true
-bus = "BG_Music"
-__meta__ = {
-"_editor_description_": "Maybe we must put this in its own scene"
-}
+[node name="BG_Music" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
 collision_layer = 2
