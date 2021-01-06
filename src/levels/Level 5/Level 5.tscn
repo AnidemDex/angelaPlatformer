@@ -13,10 +13,10 @@
 [ext_resource path="res://src/levels/Level 5/Level 5.gd" type="Script" id=11]
 [ext_resource path="res://src/environment/death_zone/death_zone.tscn" type="PackedScene" id=12]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 56 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -47,7 +47,7 @@ position = Vector2( 864, -64 )
 level_path = "res://src/levels/Level 6/Level 6.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 collision_layer = 2
@@ -87,12 +87,12 @@ position = Vector2( 88, 48 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 304, 48 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 336, 48 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="DeathZone" parent="." instance=ExtResource( 12 )]

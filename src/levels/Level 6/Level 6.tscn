@@ -110,6 +110,7 @@ sanity_damage = 0
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1312, 64 )
+level_path = "res://src/levels/ending_scene/ending_scene.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 position = Vector2( -40, 48 )
@@ -120,5 +121,5 @@ shape = SubResource( 4 )
 [connection signal="body_entered" from="Area2D2" to="Area2D2/RigidBody2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/CollisionShape2D" method="_on_Area2D3_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D3" method="_on_Area2D3_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D4" method="_on_Area2D3_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D3" method="_on_Area2D3_body_entered"]
