@@ -16,9 +16,10 @@ func hpDie() -> void:
 
 func sntyDie() -> void:
 	# Replace with the real death
-	print("Angela probably died, but i'm not going to remove it from scene")
+#	print("Angela probably died, but i'm not going to remove it from scene")
 	emit_signal("died")
-	emit_signal("request_text", "Now Angela is dead")
+	emit_signal("request_text", "Angela has had a mental breakdown and is no longer able to continue her search. Her mom passes away, and she is sent to an asylum for the trauma dealt and for saying she spoke with talking animal people and that she thought she was a bunny.")
+	queue_free()
 
 func _on_Stats_no_health() -> void:
 	hpDie()
