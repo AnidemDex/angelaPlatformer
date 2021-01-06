@@ -36,6 +36,8 @@ position = Vector2( 0, 160 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
 position = Vector2( 8, -160 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
 limit_left = -85
 limit_top = -171
 limit_right = 994

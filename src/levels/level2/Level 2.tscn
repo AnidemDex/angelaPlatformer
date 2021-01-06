@@ -56,6 +56,15 @@ shape = SubResource( 1 )
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 88 )
 
+[node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -388
+limit_top = 0
+limit_right = 1013
+limit_bottom = 661
+editor_draw_limits = true
+
 [node name="Background" parent="." instance=ExtResource( 10 )]
 z_index = -1
 

@@ -46,6 +46,15 @@ tile_data = PoolIntArray( -655373, 3, 0, -655372, 3, 1, -655371, 3, 1, -655370, 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1136, 168 )
 
+[node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -358
+limit_top = -318
+limit_right = 1143
+limit_bottom = 649
+editor_draw_limits = true
+
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1136, 416 )
 collision_layer = 2147483648

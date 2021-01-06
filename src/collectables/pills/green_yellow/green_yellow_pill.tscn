@@ -19,5 +19,5 @@ shape = SubResource( 1 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 script = ExtResource( 4 )
-[connection signal="body_entered" from="." to="AudioStreamPlayer" method="_on_green_yellow_pill_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_green_yellow_pill_body_entered"]
+[connection signal="body_entered" from="." to="AudioStreamPlayer" method="_on_green_yellow_pill_body_entered"]
