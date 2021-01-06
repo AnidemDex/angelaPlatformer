@@ -67,36 +67,6 @@ shape = SubResource( 2 )
 one_way_collision = true
 one_way_collision_margin = 10.0
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 432, 560 )
-shape = SubResource( 2 )
-one_way_collision = true
-one_way_collision_margin = 10.0
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 432, 528 )
-shape = SubResource( 2 )
-one_way_collision = true
-one_way_collision_margin = 10.0
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 432, 496 )
-shape = SubResource( 2 )
-one_way_collision = true
-one_way_collision_margin = 10.0
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 432, 464 )
-shape = SubResource( 2 )
-one_way_collision = true
-one_way_collision_margin = 10.0
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 432, 432 )
-shape = SubResource( 2 )
-one_way_collision = true
-one_way_collision_margin = 10.0
-
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 592, 496 )
 rotation = 3.14159
@@ -188,3 +158,7 @@ z_index = -1
 
 [node name="Pill_DoubleJump" parent="." instance=ExtResource( 7 )]
 position = Vector2( -240, 248 )
+
+[node name="TileMapGenerator2" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 851981, 0, 0, 917517, 0, 0, 983053, 0, 0, 1048589, 0, 0, 1114125, 0, 0 )
+source = "res://src/environment/ladders.tscn"
