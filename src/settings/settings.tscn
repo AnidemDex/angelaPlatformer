@@ -2,7 +2,6 @@
 
 [ext_resource path="res://src/settings/settings.gd" type="Script" id=1]
 
-
 [node name="SettingsNode" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -103,5 +102,7 @@ margin_left = 52.0
 margin_right = 106.0
 margin_bottom = 20.0
 text = "Cancel"
+[connection signal="value_changed" from="Settings/HBox/Options/MainVol" to="." method="_on_MainVol_value_changed"]
+[connection signal="value_changed" from="Settings/HBox/Options/EffectsVol" to="." method="_on_EffectsVol_value_changed"]
 [connection signal="pressed" from="Settings/ConfirmSection/ApplyButton" to="." method="_on_ApplyButton_pressed"]
 [connection signal="pressed" from="Settings/ConfirmSection/CancelButton" to="." method="_on_CancelButton_pressed"]
