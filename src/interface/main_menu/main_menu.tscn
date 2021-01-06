@@ -40,18 +40,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="CanvasLayer/HBoxContainer/CenterContainer"]
-margin_left = 186.0
-margin_top = 293.0
-margin_right = 323.0
-margin_bottom = 307.0
-size_flags_horizontal = 6
-text = "Awesome Game Title"
-
 [node name="Center" type="CenterContainer" parent="CanvasLayer/HBoxContainer"]
-margin_left = 576.0
+margin_left = 577.0
 margin_top = 172.0
-margin_right = 960.0
+margin_right = 961.0
 margin_bottom = 428.0
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -98,10 +90,10 @@ __meta__ = {
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 60.0
-margin_top = 56.0
-margin_right = 324.0
-margin_bottom = 200.0
+margin_left = -11.0
+margin_top = 46.0
+margin_right = 394.0
+margin_bottom = 210.0
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
