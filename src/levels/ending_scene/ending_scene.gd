@@ -1,11 +1,11 @@
-extends CanvasLayer
+extends Control
 
 signal quit
 signal replace_main_scene(with)
 
-onready var tween = $Tween
-onready var text = $CenterContainer/Control/VBoxContainer/Label
-onready var thanks = $CenterContainer/Control/VBoxContainer/Label2
+onready var tween = $CanvasLayer/Tween
+onready var text = $CanvasLayer/CenterContainer/Control/VBoxContainer/Label
+onready var thanks = $CanvasLayer/CenterContainer/Control/VBoxContainer/Label2
 
 func _ready():
 	tween.interpolate_property(

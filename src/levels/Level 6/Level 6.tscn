@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/collectables/pills/double_jump/double_jump_pill.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/levels/level1/test_tilemap/tilemap.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://src/environment/death_zone/death_zone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/collectables/money_bag/money_bag.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/levels/Level 6/Level 6.gd" type="Script" id=12]
+[ext_resource path="res://src/levels/BG_Music.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.91, 3.21185 )
@@ -24,6 +27,7 @@ extents = Vector2( 78.7201, 10 )
 [sub_resource type="RectangleShape2D" id=4]
 
 [node name="Level 6" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
 collision_layer = 2
@@ -115,6 +119,12 @@ level_path = "res://src/levels/ending_scene/ending_scene.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoToAnotherScene"]
 position = Vector2( -40, 48 )
 shape = SubResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG_Music" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+[node name="Narrator" parent="CanvasLayer" instance=ExtResource( 14 )]
 [connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D/RigidBody2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2/CollisionShape2D" method="_on_Area2D2_body_entered"]
