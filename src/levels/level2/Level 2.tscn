@@ -7,12 +7,8 @@
 [ext_resource path="res://src/collectables/pills/red_blue/red_blue_pill.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/levels/level2/Level 2.gd" type="Script" id=7]
-<<<<<<< Updated upstream
-[ext_resource path="res://src/environment/death_zone/death_zone.tscn" type="PackedScene" id=8]
-=======
 [ext_resource path="res://src/levels/level2/Angela.wav" type="AudioStream" id=8]
 [ext_resource path="res://src/levels/level2/AudioStreamPlayer.gd" type="Script" id=9]
->>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 31.9999 )
@@ -51,17 +47,7 @@ shape = SubResource( 1 )
 [node name="PlayerSpawner" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 88 )
 
-<<<<<<< Updated upstream
-[node name="DeathZone" parent="." instance=ExtResource( 8 )]
-position = Vector2( -96, 680 )
-collision_layer = 2
-emisor_node = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-shape = SubResource( 2 )
-=======
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -15.0
 script = ExtResource( 9 )
->>>>>>> Stashed changes
