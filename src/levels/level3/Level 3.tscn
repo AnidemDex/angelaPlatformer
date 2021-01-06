@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://src/levels/level3/Level 3.gd" type="Script" id=9]
 [ext_resource path="res://Fox.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/BG_Music.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 40 )
@@ -69,3 +70,6 @@ position = Vector2( 1256, 424 )
 
 [node name="Fox" parent="." instance=ExtResource( 10 )]
 position = Vector2( -110.768, 501.344 )
+
+[node name="Background" parent="." instance=ExtResource( 12 )]
+z_index = -1

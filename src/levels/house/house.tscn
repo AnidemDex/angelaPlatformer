@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/environment/house_environment.tres" type="TileSet" id=1]
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/house/house.gd" type="Script" id=5]
 [ext_resource path="res://src/levels/house/Mombunny.png" type="Texture" id=6]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 36.818 )
@@ -44,7 +45,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 131072, -65535, 0, 131072, -65534
 script = ExtResource( 5 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( 591.097, 513.964 )
+position = Vector2( 749.917, 504.974 )
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
@@ -63,3 +64,7 @@ frame = 8
 playing = true
 
 [node name="BG_Music" parent="." instance=ExtResource( 3 )]
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8.98987, 1.49832 )
+z_index = -2
