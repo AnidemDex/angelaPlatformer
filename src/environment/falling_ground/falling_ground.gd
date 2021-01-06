@@ -20,7 +20,7 @@ func _fall():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	mode = MODE_STATIC
 	yield(get_tree().create_timer(respawn_time), "timeout")
+	mode = MODE_STATIC
 	position = initial_position
 	$RayCast2D.enabled = true
