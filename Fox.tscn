@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/levels/level3/Foxfullsprite.png" type="Texture" id=1]
+[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fox.gd" type="Script" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 60, 87 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 60, 0, 60, 87 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 60, 87 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 180, 0, 60, 87 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Fox idle",
+"speed": 5.0
+} ]
+
+[node name="Fox" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "Fox idle"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="Narrator" parent="." instance=ExtResource( 2 )]

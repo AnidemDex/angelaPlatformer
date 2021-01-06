@@ -10,6 +10,9 @@ func _ready():
 	# FIXME: delete this _ready method
 	set_text_n_show("Everything is dark...")
 
+func _on_fox_talking(text):
+	set_text_n_show(text)
+
 func set_text_n_show(text:String) -> void:
 	# TODO: Esto deberia mostrarse con una animación
 	text_label.text = text

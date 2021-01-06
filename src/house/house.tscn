@@ -1,10 +1,37 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/environment/house_environment.tres" type="TileSet" id=1]
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/levels/test_scene/Angela.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/house/house.gd" type="Script" id=5]
+[ext_resource path="res://src/house/Mombunny1.png" type="Texture" id=6]
+[ext_resource path="res://src/house/AnimatedSprite.gd" type="Script" id=7]
+[ext_resource path="res://src/house/Music.gd" type="Script" id=8]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 229, 102 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 102, 229, 102 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 204, 229, 102 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 306, 229, 102 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Mom",
+"speed": 5.0
+} ]
 
 [node name="House" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -20,9 +47,14 @@ position = Vector2( 591.097, 513.964 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = -20.0
-autoplay = true
+script = ExtResource( 8 )
 
 [node name="GoToAnotherScene" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0.424683, 516.818 )
 level_path = "res://src/levels/test_scene/Level 1.tscn"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 870.252, 493.161 )
+frames = SubResource( 5 )
+animation = "Mom"
+script = ExtResource( 7 )

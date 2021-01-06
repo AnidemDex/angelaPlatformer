@@ -1,5 +1,4 @@
 extends Position2D
-
 const player_scene = preload("res://src/player/angela.tscn")
 
 func _ready() -> void:
