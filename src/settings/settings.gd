@@ -5,9 +5,9 @@ signal ConfirmSection_pressed
 var mainvol_new_value
 var effectvol_new_value
 
-onready var fullscreen = $Settings/HBox/Options/FullScreen
-onready var mainvol = $Settings/HBox/Options/MainVol
-onready var effectvol = $Settings/HBox/Options/EffectsVol
+onready var fullscreen = $HBox/Settings/HBox/Options/FullScreen
+onready var mainvol = $HBox/Settings/HBox/Options/MainVol
+onready var effectvol = $HBox/Settings/HBox/Options/EffectsVol
 
 
 func _draw():
