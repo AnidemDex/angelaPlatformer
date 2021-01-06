@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/interface/main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://src/settings/settings.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/interface/main_menu/CleanBackground.png" type="Texture" id=3]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -12,6 +13,17 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -2.0
+margin_bottom = -1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -37,16 +49,24 @@ size_flags_horizontal = 6
 text = "Awesome Game Title"
 
 [node name="Center" type="CenterContainer" parent="CanvasLayer/HBoxContainer"]
-margin_left = 737.0
-margin_top = 266.0
-margin_right = 800.0
-margin_bottom = 334.0
+margin_left = 576.0
+margin_top = 172.0
+margin_right = 960.0
+margin_bottom = 428.0
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HBoxContainer/Center"]
+margin_right = 384.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 384, 256 )
+color = Color( 0.0862745, 0.0862745, 0.0862745, 0.666667 )
+
 [node name="Menu" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/Center"]
-margin_right = 63.0
-margin_bottom = 68.0
+margin_left = 160.0
+margin_top = 94.0
+margin_right = 223.0
+margin_bottom = 162.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -78,10 +98,18 @@ __meta__ = {
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -101.0
-margin_top = -38.0
-margin_right = 163.0
-margin_bottom = 106.0
+margin_left = 60.0
+margin_top = 56.0
+margin_right = 324.0
+margin_bottom = 200.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "DEMO"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/Center/Menu/QuitButton" to="." method="_on_QuitButton_pressed"]
