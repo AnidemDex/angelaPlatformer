@@ -20,6 +20,7 @@ func _generate():
 		else:
 			add_child(generated_node)
 		generated_node.position = map_to_world(cell_position)+Vector2(16,16)
+		generated_node.initial_position = generated_node.position
 		if not owner:
 			set_cellv(cell_position, -1)
 	
