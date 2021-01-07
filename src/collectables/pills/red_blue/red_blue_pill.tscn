@@ -24,3 +24,5 @@ bus = "Effects"
 script = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Pill_RedBlue_body_entered"]
 [connection signal="body_entered" from="." to="AudioStreamPlayer" method="_on_Pill_RedBlue_body_entered"]
+[connection signal="minus" from="." to="." method="_on_Pill_RedBlue_minus"]
+[connection signal="plus" from="." to="." method="_on_Pill_RedBlue_plus"]

@@ -14,7 +14,7 @@ func _physics_process(_delta):
 
 
 func _fall():
-	($RayCast2D.get_collider() as PlayableBody2D).movement_speed -= 25
+#	($RayCast2D.get_collider() as PlayableBody2D).movement_speed -= 25
 	yield(get_tree().create_timer(time_before_fall), "timeout")
 	mode = MODE_CHARACTER
 

@@ -55,7 +55,6 @@ limit_left = -45
 limit_top = -130
 limit_right = 1450
 limit_bottom = 535
-editor_draw_limits = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 718.127, 283.88 )
@@ -102,7 +101,7 @@ position = Vector2( -605.612, 21.1938 )
 position = Vector2( -733.612, 21.1938 )
 
 [node name="RigidBody2D3" parent="Area2D3" instance=ExtResource( 5 )]
-position = Vector2( -829.612, 21.1938 )
+position = Vector2( -893.61, 21.194 )
 
 [node name="Pill_RedBlue" parent="." instance=ExtResource( 8 )]
 position = Vector2( 48, 184 )
@@ -134,11 +133,11 @@ shape = SubResource( 4 )
 [node name="BG_Music" parent="CanvasLayer" instance=ExtResource( 13 )]
 
 [node name="Narrator" parent="CanvasLayer" instance=ExtResource( 14 )]
-[connection signal="body_entered" from="Area2D" to="Area2D/RigidBody2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D/CollisionShape2D" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2/RigidBody2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D/RigidBody2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2/CollisionShape2D" method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2/RigidBody2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3/CollisionShape2D" method="_on_Area2D3_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D4" method="_on_Area2D3_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D3" method="_on_Area2D3_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3/RigidBody2D4" method="_on_Area2D3_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="Area2D3/CollisionShape2D" method="_on_Area2D3_body_entered"]

@@ -72,7 +72,7 @@ scale = Vector2( 2, 2 )
 z_index = -1
 frames = SubResource( 6 )
 animation = "dafault"
-frame = 1
+frame = 6
 playing = true
 
 [node name="BG_Music" parent="." instance=ExtResource( 3 )]
@@ -94,7 +94,7 @@ temp_movement_speed = 300
 
 [node name="green_yellow_pill2" parent="." instance=ExtResource( 11 )]
 position = Vector2( 288, 240 )
-rotation = -3.14159
+rotation = -1.57079
 temp_movement_speed = 75
 
 [node name="Pill_RedBlue" parent="." instance=ExtResource( 10 )]
@@ -103,7 +103,7 @@ temp_jump_force = 300
 
 [node name="Pill_RedBlue2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 184, 240 )
-rotation = -3.14159
+rotation = -1.57079
 temp_jump_force = 75
 
 [node name="TileMapGenerator2" parent="." instance=ExtResource( 8 )]

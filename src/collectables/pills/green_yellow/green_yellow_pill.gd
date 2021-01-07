@@ -6,7 +6,6 @@ export(int) var time = 5
 export(Color) var color = Color.green
 
 func _on_green_yellow_pill_body_entered(body):
-	body.movement_speed = temp_movement_speed
 	body.modulate = color
 	var tween = Tween.new()
 	add_child(tween)
@@ -15,11 +14,12 @@ func _on_green_yellow_pill_body_entered(body):
 		"modulate",
 		null,
 		Color.white,
-		5)
+		time)
 	tween.start()
 	visible = false
 	hurtbox.set_deferred("disabled", true)
+	body.movement_speed += temp_movement_speed
 	yield(get_tree().create_timer(time), "timeout")
-	body.movement_speed = 150
+	body.movement_speed -= temp_movement_speed 
 	visible = true
 	hurtbox.set_deferred("disabled", false)
