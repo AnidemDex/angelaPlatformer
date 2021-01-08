@@ -6,6 +6,7 @@ export(int) var time = 10
 
 signal plus
 signal minus
+signal respawn
 
 export(Color) var color = Color.cyan
 
@@ -25,6 +26,7 @@ func _on_Pill_RedBlue_body_entered(body):
 	
 	body.jump_force += temp_jump_force
 	yield(get_tree().create_timer(time), "timeout")
+	emit_signal("respawn")
 	body.jump_force -= temp_jump_force 
 	visible = true
 	hurtbox.set_deferred("disabled", false)
