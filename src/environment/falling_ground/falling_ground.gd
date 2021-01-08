@@ -19,28 +19,43 @@ func _physics_process(_delta):
 		_fall3()
 
 func _fall():
-	($RayCast2D.get_collider() as PlayableBody2D).movement_speed -= 25
+	if ($RayCast2D.get_collider() as PlayableBody2D).movement_speed <= 150:
+		($RayCast2D.get_collider() as PlayableBody2D).movement_speed -= 25
 	
-	yield(get_tree().create_timer(time_before_fall), "timeout")
-	mode = MODE_CHARACTER
-	yield(get_tree().create_timer(respawn_time), "timeout")
-	($RayCast2D.get_collider() as PlayableBody2D).movement_speed += 25
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
+		($RayCast2D.get_collider() as PlayableBody2D).movement_speed += 25
+	else:
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
 
 func _fall2():
-	($RayCast2D2.get_collider() as PlayableBody2D).movement_speed -= 25
+	if ($RayCast2D2.get_collider() as PlayableBody2D).movement_speed <= 150:
+		($RayCast2D2.get_collider() as PlayableBody2D).movement_speed -= 25
 	
-	yield(get_tree().create_timer(time_before_fall), "timeout")
-	mode = MODE_CHARACTER
-	yield(get_tree().create_timer(respawn_time), "timeout")
-	($RayCast2D2.get_collider() as PlayableBody2D).movement_speed += 25
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
+		($RayCast2D2.get_collider() as PlayableBody2D).movement_speed += 25
+	else:
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
 
 func _fall3():
-	($RayCast2D3.get_collider() as PlayableBody2D).movement_speed -= 25
+	if ($RayCast2D3.get_collider() as PlayableBody2D).movement_speed <= 150:
+		($RayCast2D3.get_collider() as PlayableBody2D).movement_speed -= 25
 	
-	yield(get_tree().create_timer(time_before_fall), "timeout")
-	mode = MODE_CHARACTER
-	yield(get_tree().create_timer(respawn_time), "timeout")
-	($RayCast2D3.get_collider() as PlayableBody2D).movement_speed += 25
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
+		($RayCast2D3.get_collider() as PlayableBody2D).movement_speed += 25
+	else:
+		yield(get_tree().create_timer(time_before_fall), "timeout")
+		mode = MODE_CHARACTER
+		yield(get_tree().create_timer(respawn_time), "timeout")
 
 func _on_VisibilityNotifier2D_screen_exited():
 	yield(get_tree().create_timer(respawn_time), "timeout")
