@@ -58,7 +58,6 @@ func _get_direction() -> Vector2:
 	var y_axis = 1.0 if Input.is_action_just_pressed(jump_action) else 0.0
 	return Vector2(x_axis, y_axis)
 
-
 func _calculate_move_velocity(
 	linear_velocity:Vector2,
 	direction:Vector2,
@@ -76,9 +75,7 @@ func _calculate_move_velocity(
 
 	
 	if direction.y:
-		if is_on_floor():
-			out.y = (speed.y) * direction.y
-		elif jumps > 0:
+		if(is_on_floor() && jumps == 0):
 			out.y = (speed.y) * direction.y
 			jumps -= 1
 	if is_jump_interrupted:
