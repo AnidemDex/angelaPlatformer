@@ -72,12 +72,13 @@ scale = Vector2( 2, 2 )
 z_index = -1
 frames = SubResource( 6 )
 animation = "dafault"
-frame = 9
+frame = 5
 playing = true
 
 [node name="BG_Music" parent="." instance=ExtResource( 3 )]
 
 [node name="Background" parent="." instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 8.98987, 1.49832 )
 z_index = -2
 

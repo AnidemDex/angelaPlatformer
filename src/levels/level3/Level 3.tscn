@@ -86,6 +86,7 @@ editor_draw_limits = true
 position = Vector2( -110.768, 501.344 )
 
 [node name="Background" parent="." instance=ExtResource( 12 )]
+visible = false
 z_index = -1
 
 [node name="DeathZone" parent="." instance=ExtResource( 13 )]
