@@ -7,9 +7,6 @@
 [ext_resource path="res://src/collectables/pills/red_blue/AnimatedSprite.gd" type="Script" id=5]
 [ext_resource path="res://src/collectables/pills/red_blue/pillpop.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 8 )
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 32, 32 )
@@ -34,9 +31,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
 [node name="Pill_RedBlue" type="Area2D"]
 collision_layer = 4
 script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1.06066, 3.44714 )
+scale = Vector2( 1.80654, 1.50271 )
+z_index = -2
+frames = SubResource( 6 )
+frame = 1
+script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -48,16 +57,8 @@ shape = SubResource( 1 )
 stream = ExtResource( 3 )
 bus = "Effects"
 script = ExtResource( 4 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1.06066, 3.44714 )
-scale = Vector2( 1.80654, 1.50271 )
-z_index = -2
-frames = SubResource( 6 )
-frame = 1
-script = ExtResource( 5 )
+[connection signal="body_entered" from="." to="AnimatedSprite" method="_on_Pill_RedBlue_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Pill_RedBlue_body_entered"]
 [connection signal="body_entered" from="." to="AudioStreamPlayer" method="_on_Pill_RedBlue_body_entered"]
-[connection signal="body_entered" from="." to="AnimatedSprite" method="_on_Pill_RedBlue_body_entered"]
 [connection signal="minus" from="." to="." method="_on_Pill_RedBlue_minus"]
 [connection signal="plus" from="." to="." method="_on_Pill_RedBlue_plus"]

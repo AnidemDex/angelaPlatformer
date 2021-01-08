@@ -50,9 +50,6 @@ func _on_HurtBox_body_entered(body:Node)->void:
 				msg = "nothing, at all. The harshness of reality is starting to set in, angela is horrified that her mom may pass. "
 			_:
 				msg = "Angela has a mental breakdown. she was so close, she failed. her mom never recovered"
-		if msg:
-			emit_signal("request_text", msg)
-
 
 func _on_Timer_timeout():
 	stats.health -= 0

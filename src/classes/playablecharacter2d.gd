@@ -75,7 +75,9 @@ func _calculate_move_velocity(
 
 	
 	if direction.y:
-		if(is_on_floor() && jumps == 0):
+		if is_on_floor():
+			out.y = (speed.y) * direction.y
+		elif jumps > 0:
 			out.y = (speed.y) * direction.y
 			jumps -= 1
 	if is_jump_interrupted:
