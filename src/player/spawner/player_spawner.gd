@@ -7,7 +7,6 @@ func _ready() -> void:
 	player_node = player_scene.instance()
 	player_node.global_position = global_position
 	player_node.connect("ready", self, "_on_angela_ready")
-	player_node.connect("request_text", owner, "_on_request_text")
 	if owner:
 		owner.call_deferred("add_child", player_node)
 	else:

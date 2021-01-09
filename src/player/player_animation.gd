@@ -6,7 +6,7 @@ func _ready():
 	play("idle")
 
 func _process(_delta):
-	var dir:int = (owner as PlayableBody2D).direction.x
+	var dir:int = (owner as PlayableBody2D).x_axis
 	match dir:
 		-1:
 			flip_h = true

@@ -81,15 +81,9 @@ modulate = Color( 0.807843, 0, 0, 1 )
 position = Vector2( 0, 2 )
 shape = SubResource( 9 )
 
-[node name="DeathTimer" type="Timer" parent="."]
-wait_time = 30.0
-autostart = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 script = ExtResource( 6 )
 [connection signal="no_health" from="HealthNode" to="." method="_on_Stats_no_health"]
 [connection signal="no_sanity" from="HealthNode" to="." method="_on_Stats_no_sanity"]
-[connection signal="body_entered" from="CollisionsAreas/HurtBox" to="." method="_on_HurtBox_body_entered"]
-[connection signal="timeout" from="DeathTimer" to="." method="_on_Timer_timeout"]
