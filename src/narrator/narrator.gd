@@ -1,30 +1,24 @@
 extends Control
 
-<<<<<<< Updated upstream
+
 export(int) var duration:int = 4
 
-onready var text_label:Label = $PopupPanel/MarginContainer/Label
-onready var popup:PopupPanel = $PopupPanel
-onready var timer:Timer = $Timer
+onready var popup = $PopupDialog2
+onready var popup2 = $PopupDialog
+
+var time = 5
 
 func _ready():
-	# FIXME: delete this _ready method
-	set_text_n_show("Everything is dark...")
-
-func set_text_n_show(text:String) -> void:
-	# TODO: Esto deberia mostrarse con una animación
-	text_label.text = text
-	popup.popup()
+	popup.popup_centered()
 	
-func _on_fox_talking(text):
-	set_text_n_show(text)
-	
-func _on_PopupPanel_about_to_show():
-	timer.wait_time = duration
-	timer.start()
+func _physics_process(delta):
+	if Input.is_action_just_pressed("remove_text"):
+		popup.hide()
+		popup2.hide()
 
 
-func _on_Timer_timeout():
-	popup.hide()
-=======
->>>>>>> Stashed changes
+func _on_MoneyBag_body_entered(body):
+	popup2.popup_centered()
+	yield(get_tree().create_timer(time), "timeout")
+	popup2.hide()
+
