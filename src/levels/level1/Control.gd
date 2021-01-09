@@ -1,6 +1,5 @@
 extends Control
 
-
 export(int) var duration:int = 4
 
 onready var popup = $PopupDialog2
@@ -16,8 +15,8 @@ func _physics_process(delta):
 		popup.hide()
 		popup2.hide()
 
-
-func _on_MoneyBag_body_entered(body):
+func _on_MoneyBag_body_entered(_body):
+	print("testing the bag")
 	popup2.popup_centered()
 	yield(get_tree().create_timer(time), "timeout")
 	popup2.hide()
