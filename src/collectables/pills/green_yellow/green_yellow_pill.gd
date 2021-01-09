@@ -19,7 +19,13 @@ func _on_green_yellow_pill_body_entered(body):
 	visible = false
 	hurtbox.set_deferred("disabled", true)
 	body.movement_speed += temp_movement_speed
-	yield(get_tree().create_timer(time), "timeout")
-	body.movement_speed -= temp_movement_speed 
+	if body.movement_speed <= 0:
+		var move = 0 + body.movement_speed
+		body.movement_speed = 0
+		yield(get_tree().create_timer(time), "timeout")
+		body.movement_speed = body.default_movement_speed
+	else:
+		yield(get_tree().create_timer(time), "timeout")
+		body.movement_speed = body.default_movement_speed
 	visible = true
 	hurtbox.set_deferred("disabled", false)

@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="PopupDialog" type="PopupDialog"]
+margin_left = 48.0
+margin_top = -8.0
+margin_right = 88.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = -40.0
+margin_right = 102.0
+margin_bottom = 45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 135.0
+margin_bottom = 38.0
+text = "this pill allows you
+ to doublejump now"
+__meta__ = {
+"_edit_use_anchors_": false
+}

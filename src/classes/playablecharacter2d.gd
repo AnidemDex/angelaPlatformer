@@ -15,6 +15,14 @@ var jumps:int
 var _velocity:Vector2 = Vector2.ZERO
 var _speed:Vector2
 
+#var is_on_ladder = false
+#
+#enum {
+#	LADDER,
+#	WATER,
+#	GROUND
+#}
+
 export(float) var gravity = 500
 export(float) var movement_speed = 150
 export (float, 0, 1.0) var friction = 0.1
@@ -72,8 +80,7 @@ func _calculate_move_velocity(
 	else:
 		out.x = lerp(out.x, 0, friction)
 	
-
-	
+#	if is_on_ladder != true:
 	if direction.y:
 		if is_on_floor():
 			out.y = (speed.y) * direction.y
@@ -82,11 +89,11 @@ func _calculate_move_velocity(
 			jumps -= 1
 	if is_jump_interrupted:
 		out.y = out.y/2
-	
+		
 	out.y += gravity*get_physics_process_delta_time()
 	return out
-
-
+#	else: 
+		
 func _assign_default_values() -> void:
 	default_gravity = gravity
 	default_movement_speed = movement_speed
