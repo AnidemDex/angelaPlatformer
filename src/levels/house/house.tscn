@@ -50,7 +50,7 @@ tile_data = PoolIntArray( -8, 0, 0, -7, 0, 131072, -6, 0, 131072, -5, 0, 131072,
 script = ExtResource( 5 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( 480, 520 )
+position = Vector2( 1176, 424 )
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
 position = Vector2( -749.492, 11.844 )
@@ -76,7 +76,7 @@ scale = Vector2( 2, 2 )
 z_index = -1
 frames = SubResource( 6 )
 animation = "dafault"
-frame = 5
+frame = 4
 playing = true
 
 [node name="BG_Music" parent="." instance=ExtResource( 3 )]
