@@ -6,13 +6,13 @@
 [ext_resource path="res://src/levels/level1/test_tilemap/tilemap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/levels/go_to_another_level/go_to_another_level.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/player/spawner/player_spawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/narrator/narrator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/levels/level1/Control.gd" type="Script" id=7]
 [ext_resource path="res://src/levels/BG_Music.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/levels/level1/test_scene.gd" type="Script" id=9]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 48, 10 )
+extents = Vector2( 57.3171, 10 )
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource( 9 )
@@ -23,8 +23,46 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 10
 
-[node name="Narrator" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="Control" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
+<<<<<<< Updated upstream
+=======
+[node name="PopupDialog2" type="PopupDialog" parent="CanvasLayer/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/PopupDialog2"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PopupDialog2/PanelContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "\"Everything is dark...\""
+
+[node name="PopupDialog" type="PopupDialog" parent="CanvasLayer/Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/PopupDialog"]
+margin_right = 14.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PopupDialog/PanelContainer"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "The bag was empty.
+lets dive deeper so we
+can afford to buy 
+mom some medicine"
+
+>>>>>>> Stashed changes
 [node name="BG_Music" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 [node name="TileMap" parent="." instance=ExtResource( 4 )]
@@ -54,7 +92,11 @@ level_path = "res://src/levels/level2/Level 2.tscn"
 shape = SubResource( 1 )
 
 [node name="PlayerSpawner" parent="." instance=ExtResource( 6 )]
+<<<<<<< Updated upstream
 position = Vector2( 964.705, 18.7753 )
+=======
+position = Vector2( 935.069, 24.6677 )
+>>>>>>> Stashed changes
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSpawner"]
 current = true
@@ -67,3 +109,7 @@ editor_draw_limits = true
 
 [node name="Background" parent="." instance=ExtResource( 10 )]
 z_index = -1
+<<<<<<< Updated upstream
+=======
+[connection signal="body_entered" from="Collectables/MoneyBag" to="CanvasLayer/Control" method="_on_MoneyBag_body_entered"]
+>>>>>>> Stashed changes

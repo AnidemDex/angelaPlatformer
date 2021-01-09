@@ -2,6 +2,8 @@ extends Area2D
 
 export(String, FILE, "*.tscn") var level_path:String
 
+signal replace_main_scene
+
 func _ready():
 	if not level_path:
 		push_error("There's no 'level_path' in the node.")

@@ -1,5 +1,6 @@
 extends Control
 
+<<<<<<< Updated upstream
 export(int) var duration:int = 4
 
 onready var text_label:Label = $PopupPanel/MarginContainer/Label
@@ -25,3 +26,5 @@ func _on_PopupPanel_about_to_show():
 
 func _on_Timer_timeout():
 	popup.hide()
+=======
+>>>>>>> Stashed changes
